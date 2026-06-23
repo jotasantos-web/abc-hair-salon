@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ╔══════════════════════════════════════════════════════════════════════╗
+     ║  ABC Hair Salon — Marlborough, MA · Identidade LIGHT PINK             ║
+     ║  Posicionamento: salão completo, feminino, moderno e acolhedor.       ║
+     ║  Foco: cachos/ondulados, extensão, químicas, luzes/mechas, color,     ║
+     ║  tratamentos, maquiagem e barbearia. Inclusivo (crespos/afro), sem    ║
+     ║  posicionar afro como especialidade principal.                        ║
+     ║                                                                        ║
+     ║  ⚠ PRÉVIA — IMAGENS são placeholders que evocam resultados reais.     ║
+     ║     Trocar pelas fotos REAIS do @abchairoficial (prova social).       ║
+     ╚══════════════════════════════════════════════════════════════════════╝ -->
+
+<title>Carregando...</title>
+<meta name="description" content="" />
+<meta name="keywords" content="salão de beleza, cabelos cacheados, cabelos ondulados, extensão de cabelo, química capilar, luzes, mechas, coloração, maquiagem, barbearia, tratamentos capilares, Marlborough" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ABC Hair Salon" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<script>
+/* ═══ THEME — paleta LIGHT PINK ═══ */
+const THEME = {
+  cores: {
+    primary:"#F58EA8", primaryHover:"#EC7998", secondary:"#F9B4C6",
+    bg:"#FFF8FA", bgAlt:"#FDEEF3", accent:"#FFD6E0",
+    border:"#F3D9E2", ink:"#3D3440", muted:"#7A7076", card:"#FFFFFF",
+  },
+};
+
+/* ═══ CONFIG — conteúdo (dados reais + posicionamento novo) ═══ */
+const CONFIG = {
+  nome: "ABC Hair Salon",
+  marca: "Cabelo · Maquiagem · Barbearia",
+  monograma: "A",
+  tagline: "Beleza real, cabelo com personalidade.",
+  cidade: "Marlborough, MA",
+
+  // SEO
+  seo: {
+    title: "ABC Hair Salon | Cabelos, Extensão, Química, Maquiagem e Barbearia",
+    description: "Salão de beleza com atendimento para cabelos cacheados, ondulados, extensão, química, luzes, tratamentos capilares, maquiagem e barbearia. Agende seu horário na ABC Hair Salon.",
+  },
+
+  // contato
+  telefone: "+1 (774) 285-2468",
+  whatsappLink: "https://wa.link/ewbbqy",   // link único usado em todos os botões de agendar/WhatsApp
+  endereco: "530 Boston Post Rd E #3, Marlborough, MA 01752",
+  mapsQuery: "ABC Hair Salon 530 Boston Post Rd E Marlborough MA",
+  horario: "Ter a Sáb · a partir das 10h30",   // confirmar horários completos
+  instagram: "https://instagram.com/abchairoficial",
+  instagramHandle: "@abchairoficial",
+  instagramBio: "Cabelos com movimento, brilho e personalidade — do jeito que combina com você.",
+  linktree: "https://linktr.ee/ABCHairSalon",
+
+  // HERO
+  hero: {
+    titulo: "Seu cabelo pode revelar uma nova versão de você.",
+    sub: "Da finalização dos cachos às transformações com química, extensão, luzes e maquiagem: aqui, cada detalhe é pensado para valorizar sua beleza real.",
+    micro: "Atendimento feminino, masculino e serviços completos de beleza.",
+    btn1: "Agendar horário",
+    btn2: "Ver resultados reais",
+  },
+
+  // SOBRE
+  sobre: {
+    titulo: "Um salão para cuidar da sua beleza com técnica, carinho e verdade.",
+    texto: "Na ABC Hair Salon, cada atendimento começa entendendo o que você deseja, o que seu cabelo precisa e qual resultado faz sentido para o seu estilo. Trabalhamos com diferentes curvaturas, texturas e procedimentos para entregar beleza com personalidade.",
+    destaques: [
+      "Atendimento personalizado",
+      "Cuidado com diferentes tipos de cabelo",
+      "Profissionais preparados",
+      "Ambiente acolhedor",
+      "Resultado real",
+    ],
+    credito: "Comandado por Cida Norman",
+  },
+
+  // provas REAIS (sem inventar números)
+  numeros: [
+    { valor: "4,4★", label: "Avaliação no Google" },
+    { valor: "31", label: "Avaliações reais" },
+    { valor: "Salão completo", label: "Cabelo, maquiagem e barbearia" },
+  ],
+
+  // SERVIÇOS (7 cards)
+  servicos: [
+    { titulo: "Cachos e Ondulados", desc: "Finalização, definição, corte e cuidado para cabelos com movimento natural.", img: "fotos/ondulado-luzes-01.jpg" },
+    { titulo: "Extensão de Cabelo", desc: "Mais comprimento, volume e presença para quem deseja transformar o visual com segurança.", img: "fotos/extensao-04.jpg" },
+    { titulo: "Químicas e Transformações", desc: "Progressiva, alisamento, relaxamento, coloração, mechas, luzes e procedimentos personalizados.", img: "fotos/mechas-loiras-04.jpg" },
+    { titulo: "Tratamentos Capilares", desc: "Hidratação, reconstrução, nutrição e protocolos para recuperar brilho, maciez e saúde dos fios.", img: "fotos/ondulado-luzes-02.jpg" },
+    { titulo: "Maquiagem", desc: "Produções para eventos, fotos, festas e momentos especiais.", img: "fotos/maquiagem-02.jpg" },
+    /* PLACEHOLDERS — trocar pelas fotos reais quando a Cida enviar: */
+    { titulo: "Barbearia", desc: "Corte masculino, barba e cuidados para quem busca praticidade e estilo.", img: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=700&auto=format&fit=crop" },
+    { titulo: "Cabelos Crespos e Afrotexturizados", desc: "Atendimento cuidadoso para diferentes texturas e curvaturas, respeitando a identidade de cada cabelo.", img: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=700&auto=format&fit=crop" },
+  ],
+
+  // RESULTADOS REAIS (galeria + tags)
+  resultados: {
+    titulo: "Resultados reais, cabelos com personalidade.",
+    sub: "Transformações feitas no salão, com fotos reais de clientes e procedimentos.",
+    btn: "Quero transformar meu cabelo",
+    fotos: [
+      { img: "fotos/ondulado-luzes-01.jpg", tag: "Ondulados" },
+      { img: "fotos/mechas-loiras-04.jpg", tag: "Mechas" },
+      { img: "fotos/extensao-03.jpg", tag: "Extensão" },
+      { img: "fotos/mechas-loiras-05.jpg", tag: "Luzes" },
+      { img: "fotos/corte-feminino-05.jpg", tag: "Corte" },
+      { img: "fotos/extensao-04.jpg", tag: "Extensão" },
+      { img: "fotos/ondulado-luzes-02.jpg", tag: "Finalização" },
+      { img: "fotos/maquiagem-03.jpg", tag: "Maquiagem" },
+    ],
+  },
+
+  // PARA QUEM É (7 itens)
+  paraQuem: {
+    titulo: "Esse atendimento é para você que",
+    itens: [
+      "Quer valorizar seus cachos ou ondas",
+      "Deseja mudar o visual com segurança",
+      "Busca mais volume ou comprimento com extensão",
+      "Quer fazer química sem abrir mão do cuidado",
+      "Precisa recuperar a saúde dos fios",
+      "Quer se sentir mais bonita para um momento especial",
+      "Procura um salão completo para cabelo, maquiagem e barbearia",
+    ],
+  },
+
+  // DIFERENCIAIS (5 cards)
+  diferenciais: {
+    titulo: "Por que escolher a ABC Hair?",
+    cards: [
+      { titulo: "Escuta antes da transformação", desc: "Antes de qualquer procedimento, entendemos seu cabelo, sua rotina e seu objetivo." },
+      { titulo: "Resultado com cuidado", desc: "Transformar também é preservar a saúde dos fios." },
+      { titulo: "Beleza para diferentes estilos", desc: "Atendemos cabelos lisos, ondulados, cacheados, crespos, com química e com extensão." },
+      { titulo: "Salão completo", desc: "Cabelo, maquiagem e barbearia em um só lugar." },
+      { titulo: "Fotos reais", desc: "Você vê resultados de verdade, feitos no salão." },
+    ],
+  },
+
+  // imagens de apoio
+  fotosColagem: [
+    "fotos/corte-feminino-05.jpg",
+    "fotos/ondulado-luzes-02.jpg",
+    "fotos/mechas-loiras-04.jpg",
+  ],
+  fotosHero: [
+    "fotos/ondulado-luzes-01.jpg",
+    "fotos/mechas-loiras-05.jpg",
+    "fotos/extensao-05.jpg",
+    "fotos/corte-feminino-06.jpg",
+  ],
+  fotoSobre: "fotos/cida-norman.jpg",
+
+  // FAQ
+  faq: [
+    { q: "Precisa agendar ou aceita walk-in?", a: "O ideal é agendar pelo WhatsApp para garantir seu horário, mas também recebemos clientes que chegam sem marcar quando há disponibilidade." },
+    { q: "Vocês atendem todos os tipos de cabelo?", a: "Sim. Atendemos cabelos lisos, ondulados, cacheados e crespos, além de química, coloração e extensão — sempre avaliando o que faz sentido para o seu fio." },
+    { q: "Fazem corte masculino e barba?", a: "Sim, temos barbearia. Atendemos toda a família." },
+    { q: "Falam português?", a: "Claro! Somos um salão brasileiro. Você é atendida no seu idioma, com todo o carinho." },
+  ],
+
+  // CTA final
+  cta: {
+    titulo: "Pronta para viver sua próxima transformação?",
+    texto: "Agende seu horário e venha descobrir o cuidado ideal para o seu cabelo, seu estilo e sua autoestima.",
+    btn: "Agendar pelo WhatsApp",
+  },
+
+  ano: new Date().getFullYear(),
+};
+</script>
+
+<style>
+  :root { font-family: 'Jost', sans-serif; }
+  .ff { font-family: 'Cormorant Garamond', serif; }
+  html { scroll-behavior: smooth; }
+  body { font-weight: 300; }
+  .reveal { opacity: 0; transform: translateY(26px); transition: all .8s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  .arch { border-radius: 50% 50% 12px 12px / 32% 32% 8px 8px; box-shadow: 0 16px 34px -14px rgba(245,142,168,.5); }
+  img { filter: saturate(1.04) brightness(1.02); }
+  .cta { background: var(--grad-cta); color:#fff; box-shadow: 0 10px 26px -10px rgba(245,142,168,.65); }
+  .cta:hover { filter: brightness(.98); }
+  .btn-primary { background: var(--c-primary); color:#fff; box-shadow: 0 8px 22px -10px rgba(245,142,168,.6); }
+  .btn-primary:hover { background: var(--c-primary-hover); }
+  .btn-outline { background: transparent; color: var(--c-primary); border:1.5px solid var(--c-primary); }
+  .btn-outline:hover { background: var(--c-accent); }
+  .btn-onpink { background:#fff; color: var(--c-primary); }
+  .btn-onpink:hover { background: var(--c-accent); }
+  .card { background: var(--c-card); border: 1px solid var(--c-border); box-shadow: 0 10px 30px -18px rgba(245,142,168,.45); }
+  .wa-pulse { box-shadow: 0 0 0 0 rgba(37,211,102,.6); animation: wap 2.4s infinite; }
+  @keyframes wap { 70% { box-shadow: 0 0 0 16px rgba(37,211,102,0);} 100%{ box-shadow:0 0 0 0 rgba(37,211,102,0);} }
+  details > summary { list-style: none; } details > summary::-webkit-details-marker { display:none; }
+</style>
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<div class="text-white text-xs sm:text-sm" style="background:var(--c-primary)">
+  <div class="max-w-6xl mx-auto px-5 py-2.5 flex items-center justify-center sm:justify-between gap-4 flex-wrap">
+    <a id="topTel" href="#" class="flex items-center gap-2 hover:opacity-80 transition"></a>
+    <span id="topEnd" class="hidden sm:flex items-center gap-2 opacity-90"></span>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b" style="border-color:var(--c-border)">
+  <div class="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between">
+    <a href="#hero" class="leading-none">
+      <div id="logo" class="ff text-2xl font-600" style="color:var(--c-primary)"></div>
+      <div id="logoSub" class="text-[9px] uppercase tracking-[.3em]" style="color:var(--c-primary)"></div>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-sm" style="color:var(--c-ink)">
+      <a href="#servicos" class="hover:opacity-60 transition">Serviços</a>
+      <a href="#resultados" class="hover:opacity-60 transition">Resultados</a>
+      <a href="#sobre" class="hover:opacity-60 transition">Sobre</a>
+      <a href="#contato" class="hover:opacity-60 transition">Contato</a>
+    </nav>
+    <a id="navCta" href="#" class="cta rounded-full px-5 py-2.5 text-xs sm:text-sm font-500 flex items-center gap-2 transition"></a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero" class="pt-16 pb-0" style="background:var(--grad-hero)">
+  <div class="max-w-3xl mx-auto px-5 text-center reveal">
+    <div class="w-16 h-16 mx-auto rounded-full border-2 flex items-center justify-center ff text-3xl font-600" style="border-color:var(--c-primary);color:var(--c-primary)" id="monograma"></div>
+    <h1 id="heroTitulo" class="mt-7 ff text-4xl sm:text-5xl lg:text-6xl font-600 leading-[1.05]" style="color:var(--c-ink)"></h1>
+    <p id="heroSub" class="mt-5 text-lg font-300 max-w-xl mx-auto" style="color:var(--c-muted)"></p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+      <a id="heroCta1" href="#" class="cta inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm uppercase tracking-[.12em] font-500 transition hover:scale-[1.03]"></a>
+      <a id="heroCta2" href="#resultados" class="btn-outline inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm uppercase tracking-[.12em] font-500 transition"></a>
+    </div>
+    <p id="heroMicro" class="mt-4 text-xs font-300" style="color:var(--c-muted)"></p>
+  </div>
+  <div class="max-w-6xl mx-auto px-5 mt-12 grid grid-cols-2 md:grid-cols-4 gap-4" id="heroArcos"></div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" class="py-24" style="background:var(--c-bg-alt)">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-14 items-center">
+    <div class="reveal relative">
+      <div class="rounded-[1.5rem] overflow-hidden aspect-[4/5] max-w-md" style="box-shadow:0 20px 44px -20px rgba(245,142,168,.6)">
+        <img id="sobreImg" alt="Cida Norman — ABC Hair Salon" class="w-full h-full object-cover" />
+      </div>
+      <div class="absolute -top-5 -left-5 w-20 h-20 rounded-full border-2 bg-white flex items-center justify-center ff text-4xl font-600" style="border-color:var(--c-primary);color:var(--c-primary)" id="sobreMono"></div>
+    </div>
+    <div class="reveal">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-10 h-px" style="background:var(--c-primary)"></span>
+        <span class="text-xs uppercase tracking-[.25em] font-500" style="color:var(--c-primary)">Quem cuida de você</span>
+      </div>
+      <h2 class="ff text-3xl sm:text-4xl lg:text-5xl font-600 leading-tight" style="color:var(--c-ink)" id="sobreTitulo"></h2>
+      <p id="sobreTexto" class="mt-5 font-300 text-lg leading-relaxed" style="color:var(--c-muted)"></p>
+      <ul class="mt-6 grid sm:grid-cols-2 gap-x-6 gap-y-3" id="sobreDestaques"></ul>
+      <div class="mt-7 flex items-center gap-4">
+        <a id="sobreCta" href="#" class="btn-primary inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm uppercase tracking-[.1em] font-500 transition">Agendar horário</a>
+        <span id="sobreCredito" class="text-sm italic" style="color:var(--c-primary)"></span>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-5xl mx-auto px-5 mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 reveal" id="numerosGrid"></div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos" class="py-24" style="background:var(--c-bg)">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <div class="flex items-center justify-center gap-3 mb-3">
+        <span class="w-10 h-px" style="background:var(--c-primary)"></span>
+        <span class="text-xs uppercase tracking-[.25em] font-500" style="color:var(--c-primary)">O que fazemos</span>
+        <span class="w-10 h-px" style="background:var(--c-primary)"></span>
+      </div>
+      <h2 class="ff text-4xl sm:text-5xl font-600 leading-tight" style="color:var(--c-ink)">Nossos serviços</h2>
+      <p class="mt-4 font-300 text-lg" style="color:var(--c-muted)">Do cuidado diário à grande transformação, temos um serviço pensado para cada momento da sua beleza.</p>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="servicosGrid"></div>
+  </div>
+</section>
+
+<!-- RESULTADOS REAIS (galeria) -->
+<section id="resultados" class="py-24" style="background:var(--c-bg-alt)">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <h2 class="ff text-4xl sm:text-5xl font-600 leading-tight" style="color:var(--c-ink)" id="resTitulo"></h2>
+      <p class="mt-4 font-300 text-lg" style="color:var(--c-muted)" id="resSub"></p>
+    </div>
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4" id="resGrid"></div>
+    <div class="text-center mt-10 reveal">
+      <a id="resCta" href="#" class="cta inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm uppercase tracking-[.12em] font-500 transition hover:scale-[1.03]"></a>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM É -->
+<section class="py-24" style="background:var(--c-bg)">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-14 items-center">
+    <div class="reveal relative h-[420px] order-2 md:order-1" id="colagem"></div>
+    <div class="reveal order-1 md:order-2">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-10 h-px" style="background:var(--c-primary)"></span>
+        <span class="text-xs uppercase tracking-[.25em] font-500" style="color:var(--c-primary)">Para você</span>
+      </div>
+      <h2 class="ff text-4xl sm:text-5xl font-600 leading-tight" style="color:var(--c-ink)" id="paraQuemTitulo"></h2>
+      <ul class="mt-7 space-y-3" id="paraQuemLista"></ul>
+      <a id="paraQuemCta" href="#" class="cta mt-8 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm uppercase tracking-[.1em] font-500 transition hover:scale-[1.03]">Agendar horário</a>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="py-24" style="background:var(--c-bg-alt)">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <h2 class="ff text-4xl sm:text-5xl font-600" style="color:var(--c-ink)" id="difTitulo"></h2>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="difGrid"></div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="py-24" style="background:var(--c-bg)">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center">
+    <div class="reveal">
+      <h2 class="ff text-4xl sm:text-5xl font-600 leading-tight" style="color:var(--c-ink)">Acompanhe as transformações no Instagram</h2>
+      <p id="igBio" class="mt-4 font-300 text-lg" style="color:var(--c-muted)"></p>
+      <a id="igCta" href="#" target="_blank" class="btn-primary mt-7 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm uppercase tracking-[.1em] font-500 transition"></a>
+    </div>
+    <div class="reveal grid grid-cols-3 gap-3" id="igGrid"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-24" style="background:var(--c-bg-alt)">
+  <div class="max-w-3xl mx-auto px-5">
+    <div class="text-center reveal">
+      <h2 class="ff text-4xl sm:text-5xl font-600" style="color:var(--c-ink)">Perguntas frequentes</h2>
+    </div>
+    <div class="mt-10 space-y-3" id="faqList"></div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="contato" class="relative overflow-hidden" style="background:var(--grad-cta)">
+  <div class="max-w-3xl mx-auto px-5 py-24 text-center reveal">
+    <h2 class="ff text-4xl sm:text-5xl font-600 text-white leading-tight" id="ctaTitulo"></h2>
+    <p class="mt-4 text-white/90 font-300 text-lg max-w-xl mx-auto" id="ctaTexto"></p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+      <a id="ctaWa" href="#" class="btn-onpink inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm uppercase tracking-[.12em] font-500 transition hover:scale-[1.03]"></a>
+      <a id="ctaMaps" href="#" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm uppercase tracking-[.12em] font-500 text-white border border-white/60 transition hover:bg-white/10">Como chegar</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-12 border-t" style="background:var(--c-bg-alt);border-color:var(--c-border)">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-3 gap-8" style="color:var(--c-muted)">
+    <div>
+      <div id="footLogo" class="ff text-2xl font-600" style="color:var(--c-primary)"></div>
+      <div id="footMarca" class="text-[9px] uppercase tracking-[.3em] mt-1" style="color:var(--c-primary)"></div>
+      <p id="footTag" class="mt-4 text-sm italic font-300" style="color:var(--c-muted)"></p>
+    </div>
+    <div class="text-sm font-300 space-y-2" style="color:var(--c-ink)">
+      <div id="footEnd"></div>
+      <div id="footTel"></div>
+      <div id="footHora"></div>
+    </div>
+    <div class="text-sm font-300 space-y-2">
+      <a id="footIg" href="#" target="_blank" class="block transition hover:opacity-70" style="color:var(--c-primary)">Instagram ↗</a>
+      <a id="footLink" href="#" target="_blank" class="block transition hover:opacity-70" style="color:var(--c-primary)">Linktree ↗</a>
+      <p id="footCopy" class="mt-5 text-xs" style="color:var(--c-muted)"></p>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a id="waFloat" href="#" target="_blank"
+   class="wa-pulse fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] text-white rounded-full pl-4 pr-5 py-3.5 shadow-xl hover:scale-105 transition">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.148-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+  <span class="font-500 text-sm hidden sm:block">Agendar</span>
+</a>
+
+<script>
+(function(){
+  const C = CONFIG, T = THEME;
+  const wa = C.whatsappLink;
+  const maps = `https://maps.google.com/maps?q=${encodeURIComponent(C.mapsQuery)}`;
+  const $ = (id)=>document.getElementById(id);
+  const set = (id,v)=>{ const el=$(id); if(el) el.textContent=v; };
+
+  const r = document.documentElement.style;
+  r.setProperty('--c-primary', T.cores.primary);
+  r.setProperty('--c-primary-hover', T.cores.primaryHover);
+  r.setProperty('--c-secondary', T.cores.secondary);
+  r.setProperty('--c-bg', T.cores.bg);
+  r.setProperty('--c-bg-alt', T.cores.bgAlt);
+  r.setProperty('--c-accent', T.cores.accent);
+  r.setProperty('--c-border', T.cores.border);
+  r.setProperty('--c-ink', T.cores.ink);
+  r.setProperty('--c-muted', T.cores.muted);
+  r.setProperty('--c-card', T.cores.card);
+  r.setProperty('--grad-hero', `linear-gradient(135deg, ${T.cores.bg} 0%, ${T.cores.bgAlt} 100%)`);
+  r.setProperty('--grad-cta', `linear-gradient(135deg, ${T.cores.primary} 0%, ${T.cores.primaryHover} 100%)`);
+  document.body.style.background = T.cores.bg;
+  document.body.style.color = T.cores.ink;
+
+  // SEO
+  document.title = C.seo.title;
+  document.querySelector('meta[name=description]').setAttribute('content', C.seo.description);
+  document.querySelector('meta[property="og:title"]').setAttribute('content', C.seo.title);
+
+  // JSON-LD BeautySalon (dados reais)
+  const ld = {
+    "@context":"https://schema.org","@type":"BeautySalon",
+    "name": C.nome, "description": C.seo.description,
+    "telephone": C.telefone, "image": C.fotoSobre,
+    "address": {"@type":"PostalAddress","streetAddress":"530 Boston Post Rd E #3","addressLocality":"Marlborough","addressRegion":"MA","postalCode":"01752","addressCountry":"US"},
+    "sameAs": [C.instagram, C.linktree],
+    "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.4","reviewCount":"31"},
+    "makesOffer": C.servicos.map(s=>({"@type":"Offer","itemOffered":{"@type":"Service","name":s.titulo}}))
+  };
+  const ldEl = document.createElement('script'); ldEl.type='application/ld+json'; ldEl.textContent=JSON.stringify(ld);
+  document.head.appendChild(ldEl);
+
+  // topbar
+  $('topTel').innerHTML = `📞 ${C.telefone}`; $('topTel').href = `tel:${C.telefone.replace(/[^+\d]/g,'')}`;
+  $('topEnd').innerHTML = `📍 ${C.endereco}`;
+
+  // nav
+  set('logo', C.nome); set('logoSub', C.marca);
+  $('navCta').innerHTML = `📞 ${C.telefone}`; $('navCta').href = wa;
+
+  // hero
+  set('monograma', C.monograma);
+  set('heroTitulo', C.hero.titulo);
+  set('heroSub', C.hero.sub);
+  set('heroMicro', C.hero.micro);
+  $('heroCta1').textContent = C.hero.btn1; $('heroCta1').href = wa;
+  $('heroCta2').textContent = C.hero.btn2;
+  $('heroArcos').innerHTML = C.fotosHero.map((src,i)=>`
+    <div class="arch overflow-hidden ${i%2?'mt-0':'md:mt-8'} aspect-[3/4] reveal">
+      <img src="${src}" alt="Resultado de cabelo na ABC Hair Salon" class="w-full h-full object-cover"/>
+    </div>`).join('');
+
+  // sobre
+  $('sobreImg').src = C.fotoSobre;
+  set('sobreMono', C.monograma);
+  set('sobreTitulo', C.sobre.titulo);
+  set('sobreTexto', C.sobre.texto);
+  set('sobreCredito', C.sobre.credito);
+  $('sobreCta').href = wa;
+  $('sobreDestaques').innerHTML = C.sobre.destaques.map(d=>`
+    <li class="flex items-center gap-2 text-sm" style="color:var(--c-ink)">
+      <span class="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-white text-[10px]" style="background:var(--c-primary)">✓</span>
+      <span class="font-400">${d}</span>
+    </li>`).join('');
+  $('numerosGrid').innerHTML = C.numeros.map(n=>`
+    <div class="text-center">
+      <div class="ff text-3xl sm:text-4xl font-600" style="color:var(--c-primary)">${n.valor}</div>
+      <div class="mt-1 text-sm font-300" style="color:var(--c-muted)">${n.label}</div>
+    </div>`).join('');
+
+  // serviços
+  $('servicosGrid').innerHTML = C.servicos.map(s=>`
+    <div class="card rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 reveal">
+      <div class="aspect-[4/3] overflow-hidden"><img src="${s.img}" alt="${s.titulo}" class="w-full h-full object-cover"/></div>
+      <div class="p-7 text-center">
+        <h3 class="ff text-2xl font-600" style="color:var(--c-ink)">${s.titulo}</h3>
+        <p class="mt-2 text-sm font-300" style="color:var(--c-muted)">${s.desc}</p>
+        <a href="${wa}" class="cta mt-5 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-xs uppercase tracking-[.1em] font-500 w-full transition">Agendar horário</a>
+      </div>
+    </div>`).join('');
+
+  // resultados (galeria)
+  set('resTitulo', C.resultados.titulo);
+  set('resSub', C.resultados.sub);
+  $('resCta').textContent = C.resultados.btn; $('resCta').href = wa;
+  $('resGrid').innerHTML = C.resultados.fotos.map(f=>`
+    <div class="relative rounded-2xl overflow-hidden aspect-[4/5] group reveal" style="box-shadow:0 14px 30px -16px rgba(245,142,168,.5)">
+      <img src="${f.img}" alt="Resultado: ${f.tag}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+      <span class="absolute top-3 left-3 text-[11px] font-500 px-3 py-1 rounded-full" style="background:rgba(255,255,255,.9);color:var(--c-primary)">${f.tag}</span>
+    </div>`).join('');
+
+  // para quem
+  set('paraQuemTitulo', C.paraQuem.titulo);
+  $('paraQuemCta').href = wa;
+  $('paraQuemLista').innerHTML = C.paraQuem.itens.map(p=>`
+    <li class="flex items-start gap-3" style="color:var(--c-ink)">
+      <span class="shrink-0 w-6 h-6 mt-0.5 rounded-full flex items-center justify-center text-white text-xs" style="background:var(--c-primary)">✓</span>
+      <span class="font-400">${p}</span>
+    </li>`).join('');
+  const cl = C.fotosColagem;
+  $('colagem').innerHTML = `
+    <div class="absolute left-0 top-6 w-40 sm:w-48 aspect-[3/4] arch overflow-hidden -rotate-6"><img src="${cl[1]}" class="w-full h-full object-cover" alt=""/></div>
+    <div class="absolute right-0 top-6 w-40 sm:w-48 aspect-[3/4] arch overflow-hidden rotate-6"><img src="${cl[2]}" class="w-full h-full object-cover" alt=""/></div>
+    <div class="absolute left-1/2 -translate-x-1/2 top-0 w-44 sm:w-56 aspect-[3/4] arch overflow-hidden ring-4 ring-white z-10"><img src="${cl[0]}" class="w-full h-full object-cover" alt=""/></div>`;
+
+  // diferenciais
+  set('difTitulo', C.diferenciais.titulo);
+  $('difGrid').innerHTML = C.diferenciais.cards.map((d,i)=>`
+    <div class="card rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 reveal">
+      <div class="w-10 h-10 rounded-full flex items-center justify-center ff text-lg font-600" style="background:var(--c-accent);color:var(--c-primary)">${i+1}</div>
+      <h3 class="mt-4 ff text-xl font-600" style="color:var(--c-ink)">${d.titulo}</h3>
+      <p class="mt-2 text-sm font-300 leading-relaxed" style="color:var(--c-muted)">${d.desc}</p>
+    </div>`).join('');
+
+  // instagram
+  set('igBio', C.instagramBio);
+  $('igCta').textContent = `Seguir ${C.instagramHandle}`; $('igCta').href = C.instagram;
+  $('igGrid').innerHTML = C.resultados.fotos.slice(0,6).map(f=>`
+    <div class="aspect-square rounded-2xl overflow-hidden reveal" style="box-shadow:0 12px 28px -16px rgba(245,142,168,.5)"><img src="${f.img}" alt="" class="w-full h-full object-cover hover:scale-105 transition duration-500"/></div>`).join('');
+
+  // faq
+  $('faqList').innerHTML = C.faq.map(f=>`
+    <details class="group card rounded-2xl px-6 py-5 reveal">
+      <summary class="flex justify-between items-center cursor-pointer font-500" style="color:var(--c-ink)">
+        <span class="pr-4">${f.q}</span>
+        <span class="shrink-0 text-2xl transition group-open:rotate-45" style="color:var(--c-primary)">+</span>
+      </summary>
+      <p class="mt-3 text-sm font-300 leading-relaxed" style="color:var(--c-muted)">${f.a}</p>
+    </details>`).join('');
+
+  // cta final
+  set('ctaTitulo', C.cta.titulo);
+  set('ctaTexto', C.cta.texto);
+  $('ctaWa').textContent = C.cta.btn; $('ctaWa').href = wa;
+  $('ctaMaps').href = maps;
+
+  // footer
+  set('footLogo', C.nome); set('footMarca', C.marca);
+  $('footTag').textContent = `"${C.tagline}"`;
+  set('footEnd', C.endereco); set('footTel', C.telefone); set('footHora', C.horario);
+  $('footIg').href = C.instagram; $('footLink').href = C.linktree;
+  set('footCopy', `© ${C.ano} ${C.nome} • ${C.cidade}`);
+
+  // whatsapp flutuante
+  $('waFloat').href = wa;
+
+  // reveal
+  const io = new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }), {threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+})();
+</script>
+</body>
+</html>
