@@ -95,11 +95,11 @@ const CONFIG = {
   servicos: [
     { titulo: "Cachos e Ondulados", desc: "Finalização, definição, corte e cuidado para cabelos com movimento natural.", img: "fotos/ondulado-luzes-01.jpg" },
     { titulo: "Extensão de Cabelo", desc: "Mais comprimento, volume e presença para quem deseja transformar o visual com segurança.", img: "fotos/extensao-04.jpg" },
-    { titulo: "Químicas e Transformações", desc: "Progressiva, alisamento, relaxamento, coloração, mechas, luzes e procedimentos personalizados.", img: "fotos/mechas-loiras-04.jpg" },
+    { titulo: "Químicas e Transformações", desc: "Progressiva, alisamento, relaxamento, coloração, mechas, luzes e procedimentos personalizados.", img: "fotos/alinhamento.jpg" },
     { titulo: "Tratamentos Capilares", desc: "Hidratação, reconstrução, nutrição e protocolos para recuperar brilho, maciez e saúde dos fios.", img: "fotos/ondulado-luzes-02.jpg" },
-    { titulo: "Maquiagem", desc: "Produções para eventos, fotos, festas e momentos especiais.", img: "fotos/maquiagem-02.jpg" },
-    /* PLACEHOLDERS — trocar pelas fotos reais quando a Cida enviar: */
-    { titulo: "Barbearia", desc: "Corte masculino, barba e cuidados para quem busca praticidade e estilo.", img: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=700&auto=format&fit=crop" },
+    { titulo: "Maquiagem", desc: "Produções para eventos, fotos, festas e momentos especiais.", img: "fotos/maquiagem-01.jpg" },
+    { titulo: "Barbearia", desc: "Corte masculino, barba e cuidados para quem busca praticidade e estilo.", img: "fotos/barbeiro-01.jpg" },
+    /* PLACEHOLDER — trocar pela foto real quando a Cida enviar: */
     { titulo: "Cabelos Crespos e Afrotexturizados", desc: "Atendimento cuidadoso para diferentes texturas e curvaturas, respeitando a identidade de cada cabelo.", img: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=700&auto=format&fit=crop" },
   ],
 
@@ -109,14 +109,14 @@ const CONFIG = {
     sub: "Transformações feitas no salão, com fotos reais de clientes e procedimentos.",
     btn: "Quero transformar meu cabelo",
     fotos: [
-      { img: "fotos/ondulado-luzes-01.jpg", tag: "Ondulados" },
       { img: "fotos/mechas-loiras-04.jpg", tag: "Mechas" },
-      { img: "fotos/extensao-03.jpg", tag: "Extensão" },
-      { img: "fotos/mechas-loiras-05.jpg", tag: "Luzes" },
       { img: "fotos/corte-feminino-05.jpg", tag: "Corte" },
-      { img: "fotos/extensao-04.jpg", tag: "Extensão" },
-      { img: "fotos/ondulado-luzes-02.jpg", tag: "Finalização" },
+      { img: "fotos/barbeiro-04.jpg", tag: "Barbearia" },
+      { img: "fotos/extensao-03.jpg", tag: "Extensão" },
+      { img: "fotos/barbeiro-03.jpg", tag: "Corte masculino" },
       { img: "fotos/maquiagem-03.jpg", tag: "Maquiagem" },
+      { img: "fotos/barbeiro-05.jpg", tag: "Barbearia" },
+      { img: "fotos/barbeiro-06.jpg", tag: "Corte masculino" },
     ],
   },
 
@@ -148,17 +148,16 @@ const CONFIG = {
 
   // imagens de apoio
   fotosColagem: [
-    "fotos/corte-feminino-05.jpg",
-    "fotos/ondulado-luzes-02.jpg",
-    "fotos/mechas-loiras-04.jpg",
+    "fotos/maquiagem-02.jpg",
+    "fotos/barbeiro-07.jpg",
   ],
   fotosHero: [
-    "fotos/ondulado-luzes-01.jpg",
     "fotos/mechas-loiras-05.jpg",
     "fotos/extensao-05.jpg",
     "fotos/corte-feminino-06.jpg",
+    "fotos/barbeiro-02.jpg",
   ],
-  fotoSobre: "fotos/cida-norman.jpg",
+  fotoSobre: "fotos/cida-norman-pro.jpg",
 
   // FAQ
   faq: [
@@ -329,13 +328,11 @@ const CONFIG = {
 
 <!-- INSTAGRAM -->
 <section class="py-24" style="background:var(--c-bg)">
-  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center">
-    <div class="reveal">
-      <h2 class="ff text-4xl sm:text-5xl font-600 leading-tight" style="color:var(--c-ink)">Acompanhe as transformações no Instagram</h2>
-      <p id="igBio" class="mt-4 font-300 text-lg" style="color:var(--c-muted)"></p>
-      <a id="igCta" href="#" target="_blank" class="btn-primary mt-7 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm uppercase tracking-[.1em] font-500 transition"></a>
-    </div>
-    <div class="reveal grid grid-cols-3 gap-3" id="igGrid"></div>
+  <div class="max-w-3xl mx-auto px-5 text-center reveal">
+    <div class="w-14 h-14 mx-auto rounded-full flex items-center justify-center text-2xl" style="background:var(--c-accent)">📸</div>
+    <h2 class="mt-5 ff text-4xl sm:text-5xl font-600 leading-tight" style="color:var(--c-ink)">Acompanhe as transformações no Instagram</h2>
+    <p id="igBio" class="mt-4 font-300 text-lg" style="color:var(--c-muted)"></p>
+    <a id="igCta" href="#" target="_blank" class="btn-primary mt-7 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm uppercase tracking-[.1em] font-500 transition"></a>
   </div>
 </section>
 
@@ -472,7 +469,7 @@ const CONFIG = {
   // serviços
   $('servicosGrid').innerHTML = C.servicos.map(s=>`
     <div class="card rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 reveal">
-      <div class="aspect-[4/3] overflow-hidden"><img src="${s.img}" alt="${s.titulo}" class="w-full h-full object-cover"/></div>
+      <div class="aspect-[4/5] overflow-hidden"><img src="${s.img}" alt="${s.titulo}" class="w-full h-full object-cover object-top"/></div>
       <div class="p-7 text-center">
         <h3 class="ff text-2xl font-600" style="color:var(--c-ink)">${s.titulo}</h3>
         <p class="mt-2 text-sm font-300" style="color:var(--c-muted)">${s.desc}</p>
@@ -500,9 +497,8 @@ const CONFIG = {
     </li>`).join('');
   const cl = C.fotosColagem;
   $('colagem').innerHTML = `
-    <div class="absolute left-0 top-6 w-40 sm:w-48 aspect-[3/4] arch overflow-hidden -rotate-6"><img src="${cl[1]}" class="w-full h-full object-cover" alt=""/></div>
-    <div class="absolute right-0 top-6 w-40 sm:w-48 aspect-[3/4] arch overflow-hidden rotate-6"><img src="${cl[2]}" class="w-full h-full object-cover" alt=""/></div>
-    <div class="absolute left-1/2 -translate-x-1/2 top-0 w-44 sm:w-56 aspect-[3/4] arch overflow-hidden ring-4 ring-white z-10"><img src="${cl[0]}" class="w-full h-full object-cover" alt=""/></div>`;
+    <div class="absolute left-2 top-10 w-44 sm:w-52 aspect-[3/4] arch overflow-hidden -rotate-3"><img src="${cl[0]}" class="w-full h-full object-cover" alt=""/></div>
+    <div class="absolute right-2 top-0 w-44 sm:w-52 aspect-[3/4] arch overflow-hidden rotate-3 ring-4 ring-white z-10"><img src="${cl[1]}" class="w-full h-full object-cover object-top" alt=""/></div>`;
 
   // diferenciais
   set('difTitulo', C.diferenciais.titulo);
@@ -516,8 +512,6 @@ const CONFIG = {
   // instagram
   set('igBio', C.instagramBio);
   $('igCta').textContent = `Seguir ${C.instagramHandle}`; $('igCta').href = C.instagram;
-  $('igGrid').innerHTML = C.resultados.fotos.slice(0,6).map(f=>`
-    <div class="aspect-square rounded-2xl overflow-hidden reveal" style="box-shadow:0 12px 28px -16px rgba(245,142,168,.5)"><img src="${f.img}" alt="" class="w-full h-full object-cover hover:scale-105 transition duration-500"/></div>`).join('');
 
   // faq
   $('faqList').innerHTML = C.faq.map(f=>`
