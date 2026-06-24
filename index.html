@@ -60,6 +60,15 @@ const CONFIG = {
   instagramHandle: "@abchairoficial",
   instagramBio: "Cabelos com movimento, brilho e personalidade — do jeito que combina com você.",
   linktree: "https://linktr.ee/ABCHairSalon",
+  // Vitrine "melhores resultados" (5 de salão + 1 de barbearia)
+  instaFotos: [
+    "fotos/mechas-loiras-05.jpg",
+    "fotos/corte-feminino-06.jpg",
+    "fotos/extensao-05.jpg",
+    "fotos/ondulado-luzes-01.jpg",
+    "fotos/maquiagem-01.jpg",
+    "fotos/barbeiro-02.jpg",
+  ],
 
   // HERO
   hero: {
@@ -334,6 +343,7 @@ const CONFIG = {
     <p id="igBio" class="mt-4 font-300 text-lg" style="color:var(--c-muted)"></p>
     <a id="igCta" href="#" target="_blank" class="btn-primary mt-7 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm uppercase tracking-[.1em] font-500 transition"></a>
   </div>
+  <div class="max-w-5xl mx-auto px-5 mt-12 grid grid-cols-2 sm:grid-cols-3 gap-4" id="igGrid"></div>
 </section>
 
 <!-- FAQ -->
@@ -512,6 +522,8 @@ const CONFIG = {
   // instagram
   set('igBio', C.instagramBio);
   $('igCta').textContent = `Seguir ${C.instagramHandle}`; $('igCta').href = C.instagram;
+  $('igGrid').innerHTML = C.instaFotos.map(src=>`
+    <div class="aspect-[4/5] rounded-2xl overflow-hidden reveal" style="box-shadow:0 12px 28px -16px rgba(245,142,168,.5)"><img src="${src}" alt="Resultado real — ABC Hair Salon" class="w-full h-full object-cover object-top hover:scale-105 transition duration-500"/></div>`).join('');
 
   // faq
   $('faqList').innerHTML = C.faq.map(f=>`
