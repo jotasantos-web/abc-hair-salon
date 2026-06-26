@@ -39,15 +39,16 @@ const THEME = {
 /* ═══ CONFIG — conteúdo (dados reais + posicionamento novo) ═══ */
 const CONFIG = {
   nome: "ABC Hair Salon",
-  marca: "Cabelo · Maquiagem · Barbearia",
+  nomeCompleto: "ABC Hair Salon & Barber Shop",
+  marca: "American Brazilian Cut",
   monograma: "A",
   tagline: "Beleza real, cabelo com personalidade.",
   cidade: "Marlborough, MA",
 
   // SEO
   seo: {
-    title: "ABC Hair Salon | Cabelos, Extensão, Química, Maquiagem e Barbearia",
-    description: "Salão de beleza com atendimento para cabelos cacheados, ondulados, extensão, química, luzes, tratamentos capilares, maquiagem e barbearia. Agende seu horário na ABC Hair Salon.",
+    title: "ABC Hair Salon & Barber Shop | American Brazilian Cut em Marlborough",
+    description: "ABC Hair Salon & Barber Shop (American Brazilian Cut), em Marlborough: cabelos cacheados, ondulados, extensão, química, luzes, mechas, tratamentos, maquiagem e barbearia. Agende seu horário.",
   },
 
   // contato
@@ -73,7 +74,7 @@ const CONFIG = {
   // HERO
   hero: {
     titulo: "Seu cabelo pode revelar uma nova versão de você.",
-    sub: "Da finalização dos cachos às transformações com química, extensão, luzes e maquiagem: aqui, cada detalhe é pensado para valorizar sua beleza real.",
+    sub: "Da finalização dos cachos às transformações com química, extensão, luzes, maquiagem e barbearia: aqui, cada detalhe é pensado para valorizar sua beleza real — para mulheres e homens.",
     micro: "Atendimento feminino, masculino e serviços completos de beleza.",
     btn1: "Agendar horário",
     btn2: "Ver resultados reais",
@@ -82,11 +83,12 @@ const CONFIG = {
   // SOBRE
   sobre: {
     titulo: "Um salão para cuidar da sua beleza com técnica, carinho e verdade.",
-    texto: "Na ABC Hair Salon, cada atendimento começa entendendo o que você deseja, o que seu cabelo precisa e qual resultado faz sentido para o seu estilo. Trabalhamos com diferentes curvaturas, texturas e procedimentos para entregar beleza com personalidade.",
+    texto: "ABC vem de American Brazilian Cut: o cuidado brasileiro encontrando cortes de salão e barbearia em um só lugar, em Marlborough. Cada atendimento começa entendendo o que você deseja, o que seu cabelo precisa e qual resultado faz sentido para o seu estilo — para mulheres e homens.",
     destaques: [
       "Atendimento personalizado",
       "Cuidado com diferentes tipos de cabelo",
       "Profissionais preparados",
+      "Salão e barbearia no mesmo lugar",
       "Ambiente acolhedor",
       "Resultado real",
     ],
@@ -168,7 +170,7 @@ const CONFIG = {
     "fotos/corte-feminino-06.jpg",
     "fotos/barbeiro-02.jpg",
   ],
-  fotoSobre: "fotos/cida-norman-pro.jpg",
+  fotoSobre: "fotos/cida-nova-01.jpg",
 
   // FAQ
   faq: [
@@ -183,6 +185,19 @@ const CONFIG = {
     titulo: "Pronta para viver sua próxima transformação?",
     texto: "Agende seu horário e venha descobrir o cuidado ideal para o seu cabelo, seu estilo e sua autoestima.",
     btn: "Agendar pelo WhatsApp",
+  },
+
+  // CONHEÇA O ESPAÇO (fachada + interior reais)
+  espaco: {
+    titulo: "Conheça o nosso espaço",
+    sub: "ABC vem de American Brazilian Cut. Em Marlborough, nosso salão e barbearia recebem você num ambiente real, acolhedor e com a nossa cara.",
+    fachada: "fotos/frente-salao-02.jpg",
+    interiores: [
+      "fotos/interior-02.jpg",
+      "fotos/interior-01.jpg",
+      "fotos/interior-04.jpg",
+      "fotos/interior-05.jpg",
+    ],
   },
 
   ano: new Date().getFullYear(),
@@ -355,6 +370,25 @@ const CONFIG = {
       <h2 class="ff text-4xl sm:text-5xl font-600" style="color:var(--c-ink)">Perguntas frequentes</h2>
     </div>
     <div class="mt-10 space-y-3" id="faqList"></div>
+  </div>
+</section>
+
+<!-- CONHEÇA O ESPAÇO -->
+<section class="py-24" style="background:var(--c-bg)">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <div class="flex items-center justify-center gap-3 mb-3">
+        <span class="w-10 h-px" style="background:var(--c-primary)"></span>
+        <span class="text-xs uppercase tracking-[.25em] font-500" style="color:var(--c-primary)">Nosso espaço</span>
+        <span class="w-10 h-px" style="background:var(--c-primary)"></span>
+      </div>
+      <h2 class="ff text-4xl sm:text-5xl font-600 leading-tight" style="color:var(--c-ink)" id="espTitulo"></h2>
+      <p class="mt-4 font-300 text-lg" style="color:var(--c-muted)" id="espSub"></p>
+    </div>
+    <div class="mt-10 rounded-[1.5rem] overflow-hidden reveal" style="box-shadow:0 20px 44px -22px rgba(245,142,168,.6)">
+      <img id="espFachada" alt="Fachada da ABC Hair Salon & Barber Shop em Marlborough" class="w-full aspect-[16/7] object-cover" />
+    </div>
+    <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4" id="espInteriores"></div>
   </div>
 </section>
 
@@ -537,6 +571,13 @@ const CONFIG = {
       <p class="mt-3 text-sm font-300 leading-relaxed" style="color:var(--c-muted)">${f.a}</p>
     </details>`).join('');
 
+  // conheça o espaço
+  set('espTitulo', C.espaco.titulo);
+  set('espSub', C.espaco.sub);
+  $('espFachada').src = C.espaco.fachada;
+  $('espInteriores').innerHTML = C.espaco.interiores.map(src=>`
+    <div class="rounded-2xl overflow-hidden aspect-[3/4] reveal" style="box-shadow:0 12px 28px -16px rgba(245,142,168,.5)"><img src="${src}" alt="Interior da ABC Hair Salon" class="w-full h-full object-cover hover:scale-105 transition duration-500"/></div>`).join('');
+
   // cta final
   set('ctaTitulo', C.cta.titulo);
   set('ctaTexto', C.cta.texto);
@@ -544,7 +585,7 @@ const CONFIG = {
   $('ctaMaps').href = maps;
 
   // footer
-  set('footLogo', C.nome); set('footMarca', C.marca);
+  set('footLogo', C.nomeCompleto); set('footMarca', C.marca);
   $('footTag').textContent = `"${C.tagline}"`;
   set('footEnd', C.endereco); set('footTel', C.telefone); set('footHora', C.horario);
   $('footIg').href = C.instagram; $('footLink').href = C.linktree;
